@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <script src="RMS-EDF.js"></script>
+    <link rel="stylesheet" href="RMS-EDF.css">
+    <link rel="stylesheet" href="bootstrap-5.0.2-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="fontawesome-free-6.3.0-web/css/all.css">
+    <script src="bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="bg-dark py-3">
+        <h2 style="margin-left: 27% !important;color: white;padding:0% !important;">RMS and EDF Gantt Chart Generator <i
+                class="fa-solid fa-chart-gantt ms-2" style="color:white"></i></h2>
+    </div>
+
+    <div id="carouselExampleIndicators" class="carousel slide " data-bs-interval="false" data-bs-wrap="false"
+        data-bs-ride="carousel">
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+
+                <div class="border " style="margin-left: 28%;margin-right: 28%;margin-top: 12%;width:37.8%;height:40%">
+                    <label class="bg-dark p-3 mb-5"
+                        style="color:white;font-size: 25px;font-family: 'Ubuntu', sans-serif;">Choose
+                        one of the following to proceed </label><br>
+                    <div class="ms-5 ">
+                        <label for="EDF" style="font-size: 18px;font-family: 'Ubuntu', sans-serif;">Earliest Deadline
+                            First :
+                        </label>
+                        <input id="EDF" onclick="EDFChecked()" type="checkbox"><br><br>
+                        <label for="RMS" style="font-size: 18px;font-family: 'Ubuntu', sans-serif;">Rate Monotonic
+                            Scheduling :
+                        </label>
+                        <input id="RMS" onclick="RMSChecked()" type="checkbox">
+                    </div>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+
+                <div id="selection-alert" class="alert alert-danger w-75 mt-1" role="alert"
+                    style="display: none;margin-left: 13%;">
+                </div>
+                <div id="process-count" style="display: none;margin-left: 13%;">
+                    <div style=" margin:20% !important;">
+                        <i class=" fa fa-2xl fa-tasks me-4"></i><input id="no-of-processes" type="number"
+                            placeholder="No of Processes">
+                    </div>
+                </div>
+
+
+            </div>
+
+            <div class="carousel-item">
+
+                <div id="process-alert" class="alert alert-danger w-75 mt-1" role="alert"
+                    style="display: none;margin-left: 13%;">
+                </div>
+                <div id="RMS-table" style="display: none;margin-left: 21% !important;" class="w-50 m-5">
+                    <table class="table table-bordered table-responsive-sm ">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>PID</th>
+                                <th>Period</th>
+                                <th>Execution time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody">
+
+                        </tbody>
+                    </table>
+                </div>
+                <div id="EDF-table" style="display:none;margin-left: 21% !important;" class="w-50 m-5">
+                    <table class="table table-bordered table-responsive-sm ">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>PID</th>
+                                <th>Period</th>
+                                <th>Execution time</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableBody2">
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            <div class="carousel-item">
+                   
+                <div id="input-alert" class="alert alert-danger w-75 mt-1" role="alert"
+                style="display: none;margin-left: 13%;">
+            </div>
+                <div id="rms-gantt-chart" class="mt-5" style="margin-left: 20%;">
+                
+                </div>
+                <div id="scale" class="ms-5" style="display: none;width:70%;"></div>
+               
+                <div id="chart" class="m-5" style="display: none;width:80%;margin-left: 10% !important;"></div>
+
+            </div>
+        </div>
+
+        <a onclick="BackFunction()" class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+            data-bs-slide="prev">
+            <div id="prev-button-for-disapperance" style="background-color: black;padding: 20px;border-radius: 30px;">
+                <i class="fa fa-arrow-left"></i>
+            </div>
+        </a>
+        <a onclick="ForwardFunction()" class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+            data-bs-slide="next">
+            <div id="next-button-for-disapperance" style="background-color: black;padding: 20px;border-radius: 30px;">
+                <i class="fa fa-arrow-right"></i>
+            </div>
+        </a>
+    </div>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+.carousel-control-prev {
+    left: 0;
+    padding-right: 20px;
+  }
+  
+  .carousel-control-next {
+    right: 0;
+    padding-left: 20px;
+  }
+  #no-of-processes {
+    outline: 0;
+    border-width: 0 0 2px;
+    border-color: black;
+    width:200px;
+  }
+ 
+  
